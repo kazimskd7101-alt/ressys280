@@ -1,1 +1,10 @@
-
+{
+  "dataset": "BTCUSDT May 2025 (1m)",
+  "label_horizon_steps": 15,
+  "window_size": 128,
+  "img_size": 128,
+  "train_images": 10000,
+  "valid_images": 2000,
+  "valid_accuracy": 0.5225,
+  "valid_auc": 0.52429
+}
