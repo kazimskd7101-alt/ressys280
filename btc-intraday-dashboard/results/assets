@@ -1,0 +1,9 @@
+
+---
+
+### Assets
+Create:
+- `assets/favicon.png` (any square PNG, e.g., 256×256)
+- `assets/preview.png` (optional)
+
+If you want, paste your current repo tree screenshot and I’ll tell you **exactly where to put** the `results/` folder so everything loads on GitHub Pages.
