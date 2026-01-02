@@ -1,186 +1,360 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BTC Intraday Direction — Dashboard</title>
+:root{
+  --bg0:#060810;
+  --bg1:#0B1022;
+  --card:rgba(255,255,255,0.06);
+  --card2:rgba(255,255,255,0.08);
+  --stroke:rgba(255,255,255,0.12);
+  --text:#EAF0FF;
+  --muted:rgba(234,240,255,0.66);
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono","Courier New", monospace;
+  --sans: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+  --r:18px;
+  --shadow: 0 18px 60px rgba(0,0,0,0.45);
+  --shadow2: 0 10px 30px rgba(0,0,0,0.35);
+}
 
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
-  <link rel="stylesheet" href="style.css" />
+*{ box-sizing:border-box; }
+html,body{ height:100%; }
+body{
+  margin:0;
+  font-family: var(--sans);
+  color: var(--text);
+  background:
+    radial-gradient(1200px 700px at 20% 10%, rgba(102,140,255,0.18), transparent 60%),
+    radial-gradient(900px 650px at 85% 15%, rgba(255,120,210,0.13), transparent 60%),
+    linear-gradient(180deg, var(--bg0), var(--bg1));
+  overflow-x:hidden;
+}
 
-  <!-- Plotly (charts) -->
-  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
-</head>
+.mono{ font-family: var(--mono); }
+.muted{ color: var(--muted); }
 
-<body>
-  <div class="bg"></div>
+.bg-grid{
+  position:fixed; inset:0;
+  background:
+    linear-gradient(to right, rgba(255,255,255,0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.06;
+  pointer-events:none;
+  z-index:-3;
+}
 
-  <header class="header">
-    <div class="brand">
-      <div class="dot"></div>
-      <div class="brand-text">
-        <div class="title">BTC Intraday Direction</div>
-        <div class="subtitle">Static results dashboard (GitHub Pages)</div>
-      </div>
-    </div>
+.bg-glow{
+  position:fixed;
+  width: 900px; height: 900px;
+  filter: blur(60px);
+  opacity: 0.35;
+  pointer-events:none;
+  z-index:-2;
+}
+.bg-glow.g1{
+  left:-260px; top:-320px;
+  background: radial-gradient(circle at 30% 30%, rgba(120,170,255,0.85), transparent 60%);
+}
+.bg-glow.g2{
+  right:-320px; top:-260px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,120,210,0.85), transparent 60%);
+}
 
-    <div class="header-actions">
-      <a class="btn ghost" href="results/predictions_valid.csv" download>Download predictions CSV</a>
-      <a class="btn ghost" href="results/metrics.json" download>Download metrics JSON</a>
-    </div>
-  </header>
+.topbar{
+  max-width: 1280px;
+  margin: 18px auto 0;
+  padding: 0 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap: 12px;
+}
 
-  <main class="container">
-    <!-- KPIs -->
-    <section class="grid kpis">
-      <div class="card kpi">
-        <div class="kpi-label">Dataset</div>
-        <div class="kpi-value" id="kpi-dataset">—</div>
-        <div class="kpi-foot" id="kpi-setup">—</div>
-      </div>
+.brand{ display:flex; align-items:center; gap:12px; }
+.logo-dot{
+  width: 14px; height: 14px;
+  border-radius:999px;
+  background: linear-gradient(135deg, rgba(120,170,255,0.95), rgba(255,120,210,0.95));
+  box-shadow: 0 0 0 10px rgba(120,170,255,0.10);
+}
+.brand-title{ font-weight: 900; letter-spacing: .2px; font-size: 15px; }
+.brand-subtitle{ font-size: 12px; color: var(--muted); margin-top: 2px; }
 
-      <div class="card kpi">
-        <div class="kpi-label">Validation Accuracy</div>
-        <div class="kpi-value mono" id="kpi-acc">—</div>
-        <div class="kpi-foot">from results/metrics.json</div>
-      </div>
+.top-actions{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
 
-      <div class="card kpi">
-        <div class="kpi-label">Validation AUC</div>
-        <div class="kpi-value mono" id="kpi-auc">—</div>
-        <div class="kpi-foot">from results/metrics.json</div>
-      </div>
+.btn{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding: 10px 12px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.05);
+  box-shadow: var(--shadow2);
+  text-decoration:none;
+  color: var(--text);
+  font-size: 12px;
+}
+.btn:hover{ background: rgba(255,255,255,0.08); }
+.btn.ghost{ background: rgba(255,255,255,0.04); }
 
-      <div class="card kpi">
-        <div class="kpi-label">Validation Samples</div>
-        <div class="kpi-value mono" id="kpi-n">—</div>
-        <div class="kpi-foot">rows in predictions_valid.csv</div>
-      </div>
-    </section>
+.wrap{
+  max-width: 1280px;
+  margin: 14px auto 50px;
+  padding: 0 16px;
+}
 
-    <!-- Controls + Charts -->
-    <section class="grid charts">
-      <div class="card wide">
-        <div class="card-head">
-          <div>
-            <div class="card-title">Prediction Probability Over Time</div>
-            <div class="card-subtitle">y_prob = P(up). Includes optional threshold-based prediction.</div>
-          </div>
+.card{
+  background: var(--card);
+  border: 1px solid var(--stroke);
+  border-radius: var(--r);
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  padding: 14px;
+}
 
-          <div class="controls">
-            <label class="control">
-              <span>Threshold</span>
-              <input id="thr" type="range" min="0" max="1" step="0.001" value="0.5" />
-              <span class="mono" id="thr-val">0.500</span>
-            </label>
+.card-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.card-title{ font-weight: 900; font-size: 14px; }
+.card-sub{ margin-top: 3px; font-size: 12px; color: var(--muted); }
 
-            <label class="control check">
-              <input id="toggle-truth" type="checkbox" checked />
-              <span>Show y_true</span>
-            </label>
+.kpi-grid{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
 
-            <label class="control check">
-              <input id="toggle-pred" type="checkbox" checked />
-              <span>Show y_pred</span>
-            </label>
-          </div>
-        </div>
+.kpi{ min-height: 98px; display:flex; flex-direction:column; gap: 8px; }
+.kpi-label{ color: var(--muted); font-size: 12px; }
+.kpi-value{ font-weight: 950; font-size: 18px; }
+.kpi-foot{ color: var(--muted); font-size: 12px; }
 
-        <div id="chart-prob" class="chart"></div>
-      </div>
+.controls-card{
+  margin-top: 12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap: 12px;
+  padding: 14px 14px;
+}
+.controls-title{ font-weight: 950; }
+.controls-sub{ color: var(--muted); font-size: 12px; margin-top: 3px; }
 
-      <div class="card">
-        <div class="card-head">
-          <div>
-            <div class="card-title">Probability Distribution</div>
-            <div class="card-subtitle">Histogram of y_prob values.</div>
-          </div>
-        </div>
-        <div id="chart-hist" class="chart small"></div>
-      </div>
-    </section>
+.controls-right{
+  display:flex;
+  flex-wrap:wrap;
+  gap: 10px;
+  justify-content:flex-end;
+  align-items:center;
+}
 
-    <!-- Confusion + Table -->
-    <section class="grid bottom">
-      <div class="card">
-        <div class="card-head">
-          <div>
-            <div class="card-title">Confusion Matrix</div>
-            <div class="card-subtitle">Loaded from results/confusion_matrix.json</div>
-          </div>
-        </div>
+.control{
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke);
+  background: rgba(255,255,255,0.04);
+  color: var(--muted);
+  font-size: 12px;
+}
+.control-label{ color: var(--muted); }
+.control-pill{
+  padding: 6px 8px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(0,0,0,0.25);
+  color: var(--text);
+}
+.control input[type="range"]{ width: 170px; }
+.control select{
+  background: transparent;
+  border: 0;
+  outline: none;
+  color: var(--text);
+  font-size: 12px;
+}
+.control.check{ color: var(--text); }
+.control.check input{ transform: translateY(1px); }
 
-        <div class="cm-wrap">
-          <div class="cm">
-            <div class="cm-h cm-h0">Pred 0</div>
-            <div class="cm-h cm-h1">Pred 1</div>
+.control.mini{ padding: 8px 10px; }
+.table-controls, .gallery-controls{ display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end; }
 
-            <div class="cm-v cm-v0">True 0</div>
-            <div class="cm-cell" id="cm-tn">—</div>
-            <div class="cm-cell" id="cm-fp">—</div>
+.chart-grid{
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: 1.15fr 1fr 1fr;
+  gap: 12px;
+  align-items: stretch;
+}
+.bottom-grid{
+  margin-top: 12px;
+  display:grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  align-items: stretch;
+}
+.span2{ grid-column: span 2; }
 
-            <div class="cm-v cm-v1">True 1</div>
-            <div class="cm-cell" id="cm-fn">—</div>
-            <div class="cm-cell" id="cm-tp">—</div>
-          </div>
+.chart{ width: 100%; height: 360px; }
+.chart.tall{ height: 420px; }
 
-          <div class="cm-metrics">
-            <div class="mini">
-              <div class="mini-label">TPR (Recall 1)</div>
-              <div class="mini-value mono" id="cm-tpr">—</div>
-            </div>
-            <div class="mini">
-              <div class="mini-label">TNR (Recall 0)</div>
-              <div class="mini-value mono" id="cm-tnr">—</div>
-            </div>
-            <div class="mini">
-              <div class="mini-label">Balanced Acc</div>
-              <div class="mini-value mono" id="cm-bacc">—</div>
-            </div>
-          </div>
-        </div>
-      </div>
+.chip-row{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:flex-end;
+}
+.chip{
+  padding: 8px 10px;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  min-width: 120px;
+}
+.chip-k{ font-size: 11px; color: var(--muted); }
+.chip-v{ margin-top: 6px; font-weight: 950; }
 
-      <div class="card wide">
-        <div class="card-head">
-          <div>
-            <div class="card-title">Sample Signal Examples</div>
-            <div class="card-subtitle">Loaded from results/samples.json (requires PNGs in results/samples/).</div>
-          </div>
+.cm{
+  display:grid;
+  grid-template-columns: 64px 1fr 1fr;
+  grid-template-rows: 28px 1fr 1fr;
+  gap: 10px;
+  margin-top: 10px;
+}
+.cm-h, .cm-v{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size: 12px;
+  color: var(--muted);
+  border-radius: 14px;
+  border: 1px dashed rgba(255,255,255,0.16);
+  background: rgba(255,255,255,0.03);
+}
+.cm-cell{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 16px;
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.05);
+  font-family: var(--mono);
+  font-weight: 950;
+  font-size: 18px;
+}
+.cm-foot{
+  margin-top: 10px;
+  display:grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+.mini{
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  border-radius: 14px;
+  padding: 10px;
+}
+.mini-k{ font-size: 11px; color: var(--muted); }
+.mini-v{ margin-top: 6px; font-weight: 950; }
 
-          <div class="controls">
-            <label class="control">
-              <span>Filter</span>
-              <select id="samples-filter">
-                <option value="all">All</option>
-                <option value="correct">Correct</option>
-                <option value="wrong">Wrong</option>
-              </select>
-            </label>
+.table-wrap{ overflow:auto; border-radius: 14px; border: 1px solid rgba(255,255,255,0.10); }
+.tbl{
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.tbl th, .tbl td{
+  padding: 10px 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  white-space: nowrap;
+}
+.tbl th{ text-align:left; color: var(--muted); font-weight: 800; background: rgba(0,0,0,0.20); }
+.tbl td.right, .tbl th.right{ text-align:right; }
+.bad{
+  color: rgba(255,140,170,0.95);
+  font-weight: 900;
+}
+.good{
+  color: rgba(120,255,210,0.95);
+  font-weight: 900;
+}
 
-            <label class="control">
-              <span>Sort</span>
-              <select id="samples-sort">
-                <option value="conf_desc">Confidence ↓</option>
-                <option value="conf_asc">Confidence ↑</option>
-                <option value="time_desc">Time ↓</option>
-                <option value="time_asc">Time ↑</option>
-              </select>
-            </label>
-          </div>
-        </div>
+.gallery{
+  display:grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+.sample{
+  border-radius: 16px;
+  overflow:hidden;
+  border: 1px solid rgba(255,255,255,0.10);
+  background: rgba(255,255,255,0.03);
+}
+.sample img{
+  width: 100%;
+  display:block;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  background: rgba(0,0,0,0.35);
+}
+.sample-body{ padding: 10px; }
+.tag{
+  display:inline-flex;
+  gap: 8px;
+  align-items:center;
+  font-size: 11px;
+  color: var(--muted);
+  border: 1px solid rgba(255,255,255,0.12);
+  background: rgba(255,255,255,0.03);
+  border-radius: 999px;
+  padding: 6px 10px;
+}
+.dot{
+  width: 8px; height: 8px;
+  border-radius: 999px;
+  background: rgba(120,170,255,0.95);
+}
+.tag.wrong .dot{ background: rgba(255,120,210,0.95); }
 
-        <div id="samples" class="samples"></div>
-      </div>
-    </section>
+.meta{
+  margin-top: 8px;
+  display:grid;
+  gap: 4px;
+  font-size: 12px;
+  color: var(--muted);
+}
+.meta .row{
+  display:flex;
+  justify-content:space-between;
+  gap: 10px;
+}
+.meta .row span:last-child{
+  color: var(--text);
+  font-family: var(--mono);
+}
 
-    <footer class="footer">
-      <div class="muted">
-        Data files are loaded from <span class="mono">/results</span>. For local testing, use a local server (see README).
-      </div>
-    </footer>
-  </main>
+.footer{
+  margin-top: 12px;
+  padding: 8px 2px;
+  color: var(--muted);
+  font-size: 12px;
+}
 
-  <script src="app.js"></script>
-</body>
-</html>
+@media (max-width: 1100px){
+  .kpi-grid{ grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .chart-grid{ grid-template-columns: 1fr; }
+  .bottom-grid{ grid-template-columns: 1fr; }
+  .span2{ grid-column: auto; }
+  .gallery{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .topbar{ flex-direction: column; align-items:flex-start; }
+  .top-actions{ justify-content:flex-start; }
+}
+@media (max-width: 560px){
+  .gallery{ grid-template-columns: 1fr; }
+  .control input[type="range"]{ width: 140px; }
+}
