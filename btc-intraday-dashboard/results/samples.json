@@ -1,0 +1,194 @@
+[
+  {
+    "png": "samples/correct_valid_000102.png",
+    "datetime": "2025-05-25 22:48:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050714015960693,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_000540.png",
+    "datetime": "2025-05-26 06:06:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050687789916992,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_000229.png",
+    "datetime": "2025-05-26 00:55:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050679445266724,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_000898.png",
+    "datetime": "2025-05-26 12:04:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050678849220276,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001417.png",
+    "datetime": "2025-05-26 20:43:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.505067765712738,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001557.png",
+    "datetime": "2025-05-26 23:03:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050663352012634,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001618.png",
+    "datetime": "2025-05-27 00:04:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050656795501709,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001876.png",
+    "datetime": "2025-05-27 04:22:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050655007362366,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_000062.png",
+    "datetime": "2025-05-25 22:08:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050653219223022,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001094.png",
+    "datetime": "2025-05-26 15:20:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050651431083679,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001800.png",
+    "datetime": "2025-05-27 03:06:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050649642944336,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/correct_valid_001784.png",
+    "datetime": "2025-05-27 02:50:00",
+    "y_true": 1,
+    "y_pred": 1,
+    "y_prob": 0.5050649642944336,
+    "tag": "correct"
+  },
+  {
+    "png": "samples/wrong_valid_000596.png",
+    "datetime": "2025-05-26 07:02:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050768256187439,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000110.png",
+    "datetime": "2025-05-25 22:56:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050705075263977,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000280.png",
+    "datetime": "2025-05-26 01:46:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050694346427917,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000886.png",
+    "datetime": "2025-05-26 11:52:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050694346427917,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_001897.png",
+    "datetime": "2025-05-27 04:43:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050693154335022,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_001117.png",
+    "datetime": "2025-05-26 15:43:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050683617591858,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000605.png",
+    "datetime": "2025-05-26 07:11:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050680041313171,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000557.png",
+    "datetime": "2025-05-26 06:23:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050678253173828,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000448.png",
+    "datetime": "2025-05-26 04:34:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050676465034485,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_001771.png",
+    "datetime": "2025-05-27 02:37:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050675272941589,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_000737.png",
+    "datetime": "2025-05-26 09:23:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.5050670504570007,
+    "tag": "wrong"
+  },
+  {
+    "png": "samples/wrong_valid_001145.png",
+    "datetime": "2025-05-26 16:11:00",
+    "y_true": 0,
+    "y_pred": 1,
+    "y_prob": 0.505066454410553,
+    "tag": "wrong"
+  }
+]
