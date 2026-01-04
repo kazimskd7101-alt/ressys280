@@ -1,194 +1,89 @@
 [
-  {
-    "png": "samples/correct_valid_000102.png",
-    "datetime": "2025-05-25 22:48:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050714015960693,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_000540.png",
-    "datetime": "2025-05-26 06:06:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050687789916992,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_000229.png",
-    "datetime": "2025-05-26 00:55:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050679445266724,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_000898.png",
-    "datetime": "2025-05-26 12:04:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050678849220276,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001417.png",
-    "datetime": "2025-05-26 20:43:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.505067765712738,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001557.png",
-    "datetime": "2025-05-26 23:03:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050663352012634,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001618.png",
-    "datetime": "2025-05-27 00:04:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050656795501709,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001876.png",
-    "datetime": "2025-05-27 04:22:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050655007362366,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_000062.png",
-    "datetime": "2025-05-25 22:08:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050653219223022,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001094.png",
-    "datetime": "2025-05-26 15:20:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050651431083679,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001800.png",
-    "datetime": "2025-05-27 03:06:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050649642944336,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/correct_valid_001784.png",
-    "datetime": "2025-05-27 02:50:00",
-    "y_true": 1,
-    "y_pred": 1,
-    "y_prob": 0.5050649642944336,
-    "tag": "correct"
-  },
-  {
-    "png": "samples/wrong_valid_000596.png",
-    "datetime": "2025-05-26 07:02:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050768256187439,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000110.png",
-    "datetime": "2025-05-25 22:56:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050705075263977,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000280.png",
-    "datetime": "2025-05-26 01:46:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050694346427917,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000886.png",
-    "datetime": "2025-05-26 11:52:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050694346427917,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_001897.png",
-    "datetime": "2025-05-27 04:43:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050693154335022,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_001117.png",
-    "datetime": "2025-05-26 15:43:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050683617591858,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000605.png",
-    "datetime": "2025-05-26 07:11:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050680041313171,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000557.png",
-    "datetime": "2025-05-26 06:23:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050678253173828,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000448.png",
-    "datetime": "2025-05-26 04:34:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050676465034485,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_001771.png",
-    "datetime": "2025-05-27 02:37:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050675272941589,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_000737.png",
-    "datetime": "2025-05-26 09:23:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.5050670504570007,
-    "tag": "wrong"
-  },
-  {
-    "png": "samples/wrong_valid_001145.png",
-    "datetime": "2025-05-26 16:11:00",
-    "y_true": 0,
-    "y_pred": 1,
-    "y_prob": 0.505066454410553,
-    "tag": "wrong"
-  }
+  { "png": "samples/train_000000.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000001.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000002.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000003.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000004.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000005.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000006.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000007.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000008.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000009.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000010.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000011.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000012.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000013.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000014.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000015.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000016.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000017.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000018.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000019.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000020.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000021.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000022.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000023.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000024.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000025.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000026.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000027.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000028.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000029.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000030.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000031.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000032.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000033.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000034.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000035.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000036.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000037.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000038.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000039.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000040.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000041.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000042.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000043.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000044.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000045.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000046.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000047.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000048.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000049.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000050.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000051.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000052.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000053.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000054.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000055.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000056.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000057.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000058.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000059.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000060.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000061.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000062.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000063.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000064.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000065.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000066.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000067.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000068.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000069.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+
+  { "png": "samples/train_000070.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000071.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000072.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000073.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000074.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000075.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000076.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000077.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000078.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" },
+  { "png": "samples/train_000079.png", "datetime": "—", "y_true": -1, "y_pred": -1, "y_prob": 0.0, "tag": "all" }
 ]
